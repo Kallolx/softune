@@ -24,7 +24,7 @@ const dmSans = DM_Sans({
 
 const Hero = () => {
   return (
-    <div className="bg-[#FFF8E7] pt-32 pb-16">
+    <div className="pt-32 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         {/* Client badge */}
         <div className="flex justify-center mb-6">
@@ -55,7 +55,7 @@ const Hero = () => {
         </div>
 
         {/* Main headline */}
-        <div className="text-center mb-4">
+        <div className="text-center mb-6">
           <h1
             className={`${comfortaa.className} text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 max-w-4xl mx-auto leading-tight`}
           >
@@ -103,19 +103,16 @@ const Hero = () => {
         </div>
 
         {/* Hero image */}
-        <div className="rounded-xl sm:rounded-2xl overflow-hidden mx-0 sm:mx-4">
-          <div className="relative w-full h-[250px] sm:h-[350px] md:h-[500px] rounded-xl sm:rounded-2xl overflow-hidden">
-            {/* Using Image component for better performance */}
-            <Image
-              src="/branding/hero.jpg"
-              alt="Modern office space"
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 80vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-[#FF913B]/10 mix-blend-overlay"></div>
-          </div>
+        <div className="relative w-full h-[250px] sm:h-[350px] md:h-[500px] rounded-xl sm:rounded-2xl overflow-hidden">
+          <Image
+            src="/branding/hero.jpg"
+            alt="Modern office space"
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 80vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-[#FF913B]/10 mix-blend-overlay"></div>
         </div>
       </div>
     </div>

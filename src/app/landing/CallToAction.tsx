@@ -13,7 +13,7 @@ const comfortaa = Comfortaa({
 
 const CallToAction = () => {
   return (
-    <section className="bg-[#FFF8E7] py-6 sm:py-10 md:py-16">
+    <section className="py-6 sm:py-10 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* CTA Card */}
         <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden">

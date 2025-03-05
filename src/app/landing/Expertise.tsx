@@ -21,26 +21,29 @@ const expertiseData = [
   {
     title: "Landing Pages",
     description: "Conversion-focused landing pages designed to turn visitors into customers. Our landing pages are optimized for speed, mobile responsiveness, and user engagement.",
-    imageSrc: "/expertise/mobile.png",
+    videoSrc: "/expertise/landing.mp4",
+    thumbnailSrc: "/expertise/mobile.png",
     href: "/expertise/landing-pages"
   },
   {
     title: "Business Pages",
     description: "Professional business websites that establish credibility and showcase your services. Built with scalability in mind to grow alongside your business needs.",
-    imageSrc: "/expertise/tab.png",
+    videoSrc: "/expertise/business.mp4",
+    thumbnailSrc: "/expertise/tab.png",
     href: "/expertise/business-pages"
   },
   {
     title: "e-Commerce",
     description: "Feature-rich online stores with seamless checkout experiences. Our e-commerce solutions include inventory management, payment processing, and customer analytics.",
-    imageSrc: "/expertise/laptop.png",
+    videoSrc: "/expertise/ecommerce.mp4",
+    thumbnailSrc: "/expertise/laptop.png",
     href: "/expertise/ecommerce"
   }
 ];
 
 const Expertise = () => {
   return (
-    <section className="bg-[#FFF8E7] py-10 sm:py-16 md:py-24">
+    <section className=" py-10 sm:py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section label */}
         <div className="flex justify-center mb-4 sm:mb-6">
@@ -70,7 +73,8 @@ const Expertise = () => {
                 key={index}
                 title={expertise.title}
                 description={expertise.description}
-                imageSrc={expertise.imageSrc}
+                videoSrc={expertise.videoSrc}
+                thumbnailSrc={expertise.thumbnailSrc}
                 href={expertise.href}
               />
             ))}

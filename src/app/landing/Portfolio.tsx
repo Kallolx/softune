@@ -121,7 +121,7 @@ const PortfolioCard = ({
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="bg-[#FFF8E7] py-10 sm:py-16 md:py-24">
+    <section id="portfolio" className=" py-10 sm:py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section label */}
         <div className="flex justify-center mb-4 sm:mb-6">

@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
-import Image from 'next/image';
+import React, { useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Bricolage_Grotesque } from 'next/font/google';
 
 const bricolage = Bricolage_Grotesque({
@@ -15,7 +15,8 @@ const bricolage = Bricolage_Grotesque({
 interface ExpertiseCardProps {
   title: string;
   description: string;
-  imageSrc: string;
+  videoSrc: string;
+  thumbnailSrc: string;
   href: string;
   className?: string;
 }
@@ -23,23 +24,65 @@ interface ExpertiseCardProps {
 const ExpertiseCard = ({ 
   title, 
   description, 
-  imageSrc,
+  videoSrc,
+  thumbnailSrc,
   href,
   className = '' 
 }: ExpertiseCardProps) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.play()
+        .then(() => setIsPlaying(true))
+        .catch(error => console.log('Playback failed:', error));
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+      setIsPlaying(false);
+    }
+  };
+
   return (
     <Link href={href}>
-      <div className={`bg-white rounded-xl overflow-hidden transition-all duration-300 max-w-sm w-full cursor-pointer group transform hover:-translate-y-2 ${className}`}>
-        {/* Image container with relative positioning for the arrow */}
+      <div 
+        className={`bg-white rounded-xl overflow-hidden transition-all duration-300 max-w-sm w-full cursor-pointer group transform hover:-translate-y-2 ${className}`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {/* Media container */}
         <div className="relative aspect-[4/3] w-full overflow-hidden">
-          <Image 
-            src={imageSrc} 
-            alt={title} 
-            fill 
-            className="object-cover"
-          />
+          {/* Thumbnail Image */}
+          <div className={`absolute inset-0 transition-opacity duration-300 ${isPlaying ? 'opacity-0' : 'opacity-100'}`}>
+            <Image
+              src={thumbnailSrc}
+              alt={title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 33vw"
+              priority
+            />
+          </div>
+
+          {/* Video */}
+          <div className={`absolute inset-0 transition-opacity duration-300 ${isPlaying ? 'opacity-100' : 'opacity-0'}`}>
+            <video 
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              muted
+              playsInline
+              loop
+            >
+              <source src={videoSrc} type="video/mp4" />
+            </video>
+          </div>
           
-          {/* Arrow button positioned at top right - always visible */}
+          {/* Arrow button */}
           <div className="absolute top-4 right-4 z-10">
             <div className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center transition-colors duration-300 group-hover:bg-[#FF913B] group-hover:border-[#FF913B]">
               <svg 
