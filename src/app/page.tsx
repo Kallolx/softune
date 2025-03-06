@@ -1,10 +1,12 @@
-import Hero from "@/app/landing/Hero";
-import Services from "@/app/landing/Services";
-import Expertise from "@/app/landing/Expertise";
-import About from '@/app/landing/About';
-import Testimonials from '@/app/landing/Testimonials';
-import Portfolio from '@/app/landing/Portfolio';
-import CallToAction from '@/app/landing/CallToAction';
+import Hero from "@/landing/Hero";
+import Services from "@/landing/Services";
+import Expertise from "@/landing/Expertise";
+import About from '@/landing/About';
+import Testimonials from '@/landing/Testimonials';
+import Portfolio from '@/landing/Portfolio';
+import CallToAction from '@/landing/CallToAction';
+import FAQ from '@/landing/FAQ';
+import Pricing from '@/landing/Pricing';
 
 export default function Home() {
   return (
@@ -14,18 +16,20 @@ export default function Home() {
         backgroundImage: 'url("/branding/background.jpg")',
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        backgroundPosition: 'center',
       }}
     >
-      <div className="absolute inset-0 bg-[#FFF8E7]/50"></div>
+      <div className="absolute inset-0 bg-[#FFF8E7]/80"></div>
       <div className="relative">
         <Hero />
         <Services />
         <Expertise />
         <About />
+        <Pricing />
         <Testimonials />
         <Portfolio />
         <CallToAction />
+        <FAQ />
       </div>
     </div>
   );

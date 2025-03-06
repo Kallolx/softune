@@ -17,6 +17,8 @@ interface ButtonProps {
   href?: string;
   onClick?: () => void;
   fullWidthMobile?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
 const Button = ({ 
@@ -25,7 +27,9 @@ const Button = ({
   className = '', 
   href, 
   onClick,
-  fullWidthMobile = true
+  fullWidthMobile = true,
+  type = 'button',
+  disabled = false
 }: ButtonProps) => {
   const baseStyles = `${dmSans.className} px-4 sm:px-6 py-2.5 rounded-full font-medium transition-all duration-300 text-sm sm:text-base ${fullWidthMobile ? 'w-full sm:w-auto' : ''} relative overflow-hidden`;
 
@@ -46,7 +50,8 @@ const Button = ({
       transform hover:scale-[1.03] active:scale-[0.98]`
   };
 
-  const buttonStyles = `${baseStyles} ${variantStyles[variant]} ${className}`;
+  const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed hover:scale-100 hover:bg-[#FF913B] hover:shadow-md' : '';
+  const buttonStyles = `${baseStyles} ${variantStyles[variant]} ${disabledStyles} ${className}`;
 
   if (href) {
     return (
@@ -60,6 +65,8 @@ const Button = ({
     <button 
       className={buttonStyles}
       onClick={onClick}
+      type={type}
+      disabled={disabled}
     >
       {children}
     </button>

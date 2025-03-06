@@ -78,10 +78,10 @@ const Navbar = () => {
               our work
             </button>
             <button 
-              onClick={() => scrollToSection('services')}
+              onClick={() => scrollToSection('pricing')}
               className="text-gray-800 hover:text-[#FF913B] transition-colors"
             >
-              our services
+              pricing
             </button>
           </div>
           

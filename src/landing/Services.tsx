@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import ServiceCard from "@/components/ui/ServiceCard";
+import ServiceCard from "@/components/ServiceCard";
 import { Comfortaa, Bricolage_Grotesque } from "next/font/google";
 
 const comfortaa = Comfortaa({

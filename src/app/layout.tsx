@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Comfortaa, Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from './landing/Navbar';
-import Footer from './landing/Footer';
+import Navbar from '../landing/Navbar';
+import Footer from '../landing/Footer';
 
 const comfortaa = Comfortaa({
   subsets: ["latin"],
@@ -26,11 +26,12 @@ const dmSans = DM_Sans({
 });
 
 export const viewport: Viewport = {
-  width: "device-width",
+  themeColor: '#FF913B',
+  width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-}
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   title: "Softune - Turning ideas into digital success stories",
@@ -80,13 +81,11 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/favicon/site.webmanifest",
-  themeColor: "#FF913B",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
     title: "Softune",
   },
-  viewport: "width=device-width, initial-scale=1.0",
   verification: {
     google: "your-google-site-verification",
   },

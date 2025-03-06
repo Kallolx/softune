@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import ExpertiseCard from '@/components/ui/ExpertiseCard';
+import ExpertiseCard from '@/components/ExpertiseCard';
 import { Comfortaa, Bricolage_Grotesque } from 'next/font/google';
 
 const comfortaa = Comfortaa({
@@ -26,14 +26,14 @@ const expertiseData = [
     href: "/expertise/landing-pages"
   },
   {
-    title: "Business Pages",
+    title: "Business Websites",
     description: "Professional business websites that establish credibility and showcase your services. Built with scalability in mind to grow alongside your business needs.",
     videoSrc: "/expertise/business.mp4",
     thumbnailSrc: "/expertise/tab.png",
     href: "/expertise/business-pages"
   },
   {
-    title: "e-Commerce",
+    title: "Custom Websites",
     description: "Feature-rich online stores with seamless checkout experiences. Our e-commerce solutions include inventory management, payment processing, and customer analytics.",
     videoSrc: "/expertise/ecommerce.mp4",
     thumbnailSrc: "/expertise/laptop.png",

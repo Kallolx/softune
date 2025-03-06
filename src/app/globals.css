@@ -7,6 +7,9 @@
 }
 
 :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 248, 231;
+  --background-end-rgb: 243, 230, 199;
   --background: #FFF8E7;
   --foreground: #171717;
   --primary: #FF913B;
@@ -21,7 +24,143 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    )
+    fixed;
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+/* Font selector styles */
+.font-option {
+  @apply block w-full p-3 border border-[#FF913B]/20 rounded-lg mb-2 cursor-pointer transition-all duration-200 bg-[#F3E6C7];
+}
+
+.font-option:hover {
+  @apply bg-[#FFE8C2] border-[#FF913B]/40;
+}
+
+.font-option.selected {
+  @apply border-[#FF913B] bg-[#FFE8C2];
+}
+
+/* Color picker styles */
+.color-swatch {
+  @apply w-10 h-10 rounded-full cursor-pointer border-2 transition-all duration-200;
+}
+
+.color-swatch:hover {
+  @apply transform scale-110;
+}
+
+.color-swatch.active {
+  @apply border-gray-800 shadow-md;
+}
+
+/* Template card styles */
+.template-card {
+  @apply relative overflow-hidden rounded-xl border transition-all duration-300;
+  height: 200px;
+}
+
+.template-card:hover {
+  @apply shadow-md transform -translate-y-1 border-[#FF913B];
+}
+
+.template-card.selected {
+  @apply border-2 border-[#FF913B] shadow-md;
+}
+
+.template-card-image {
+  @apply w-full h-full object-cover;
+}
+
+.template-card-overlay {
+  @apply absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.template-card:hover .template-card-overlay {
+  @apply opacity-100;
+}
+
+.template-card.selected .template-card-overlay {
+  @apply opacity-100;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.template-card-name {
+  @apply absolute bottom-0 left-0 right-0 p-2 text-center font-medium text-gray-800;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Live preview container */
+.live-preview-container {
+  @apply sticky top-8 bg-[#F3E6C7] rounded-xl overflow-hidden border border-[#FF913B]/20 shadow-sm;
+  min-height: 500px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF913B;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E87F2C;
+}
+
+/* Input Focus Styles */
+input:focus, textarea:focus, select:focus {
+  @apply outline-none ring-2 ring-[#FF913B] border-[#FF913B];
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply px-6 py-2.5 bg-[#FF913B] text-white font-medium rounded-lg shadow-md hover:bg-[#E87F2C] focus:outline-none focus:ring-2 focus:ring-[#FF913B] transition-colors;
+  --tw-ring-opacity: 0.5;
+}
+
+.btn-secondary {
+  @apply px-6 py-2.5 bg-white text-gray-800 font-medium rounded-lg shadow-sm border border-gray-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors;
+  --tw-ring-opacity: 0.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .template-card {
+    height: 180px;
+  }
+  
+  .live-preview-container {
+    min-height: 400px;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
 }

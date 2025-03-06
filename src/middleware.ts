@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone()
   
   // List of valid paths
-  const validPaths = ['/', '/contact', '/services']
+  const validPaths = ['/', '/contact', '/services', '/website-planning']
   
   // Check if the path is valid
   if (!validPaths.includes(url.pathname)) {

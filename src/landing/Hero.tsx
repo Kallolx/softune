@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Button from "@/components/Button";
 import { Comfortaa, Bricolage_Grotesque, DM_Sans } from "next/font/google";
+import { Sparkle } from "@phosphor-icons/react";
+import Link from 'next/link';
 
 const comfortaa = Comfortaa({
   subsets: ["latin"],
@@ -74,32 +76,18 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* CTA buttons */}
-        <div
-          className={`${dmSans.className} flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 px-4 sm:px-0`}
-        >
-          <Button>work with us</Button>
-          <Button
-            variant="outline"
-            className="flex items-center justify-center gap-2"
-          >
-            Hire us
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 17L17 7M17 7H7M17 7V17"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+        {/* CTA button */}
+        <div className={`${dmSans.className} flex justify-center mb-8 sm:mb-12 px-4 sm:px-0`}>
+          <Link href="/website-planning">
+            <button className={`${dmSans.className} bg-[#FF913B] text-white px-8 py-3 rounded-full flex items-center gap-2 hover:bg-[#FF913B]/90 transition-colors group relative overflow-hidden`}>
+              <span className="relative z-10">Create Your Website</span>
+              <Sparkle 
+                className="w-5 h-5 relative z-10 animate-sparkle" 
+                weight="fill"
               />
-            </svg>
-          </Button>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+            </button>
+          </Link>
         </div>
 
         {/* Hero image */}
