@@ -70,7 +70,7 @@ const Hero = () => {
           <p
             className={`${bricolage.className} text-base sm:text-lg max-w-2xl mx-auto text-gray-700 px-2`}
           >
-            At <span className="text-[#FF913B]">Softune</span>, we create stunning landing pages, custom websites, and
+            At <span className="text-[#FF0000]">Infinity</span>, we create stunning landing pages, custom websites, and
             web applications that are fast, scalable, and designed to grow your
             business. Let's bring your ideas to life!
           </p>
@@ -79,7 +79,7 @@ const Hero = () => {
         {/* CTA button */}
         <div className={`${dmSans.className} flex justify-center mb-8 sm:mb-12 px-4 sm:px-0`}>
           <Link href="/website-planning">
-            <button className={`${dmSans.className} bg-[#FF913B] text-white px-8 py-3 rounded-full flex items-center gap-2 hover:bg-[#FF913B]/90 transition-colors group relative overflow-hidden`}>
+            <button className={`${dmSans.className} bg-[#FF0000] text-white px-8 py-3 rounded-full flex items-center gap-2 hover:bg-[#FF913B]/90 transition-colors group relative overflow-hidden`}>
               <span className="relative z-10">Create Your Website</span>
               <Sparkle 
                 className="w-5 h-5 relative z-10 animate-sparkle" 

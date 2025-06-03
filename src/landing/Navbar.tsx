@@ -53,14 +53,13 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             {/* Logo with responsive sizing */}
-            <div className="w-10 h-10 sm:w-10 sm:h-10 flex items-center justify-center">
+            <div className="h-8 w-auto">
               <img 
-                src="/branding/logo.svg" 
+                src="/branding/image.png" 
                 alt="logo" 
-                className="w-[20px] h-[20px] sm:w-[30px] sm:h-[30px] object-contain" 
+                className="h-full w-auto object-contain"
               />
             </div>
-            <span className={`${comfortaa.className} ml-1 text-xl sm:text-2xl font-bold`}>Softune</span>
           </Link>
           
           {/* Desktop navigation - centered */}

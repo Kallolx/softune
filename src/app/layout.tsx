@@ -34,32 +34,32 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Softune - Turning ideas into digital success stories",
+  title: "Infinity - Turning ideas into digital success stories",
   description: "Your trusted software development partner specializing in creating innovative digital solutions, web applications, and mobile apps.",
   keywords: "software development, web development, mobile apps, digital solutions, React, Next.js",
-  authors: [{ name: "Softune" }],
-  creator: "Softune",
-  publisher: "Softune",
+  authors: [{ name: "Infinity" }],
+  creator: "Infinity",
+  publisher: "Infinity",
   robots: "index, follow",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://softune.com",
-    siteName: "Softune",
-    title: "Softune - Turning ideas into digital success stories",
+    url: "https://infinity.com",
+    siteName: "Infinity",
+    title: "Infinity - Turning ideas into digital success stories",
     description: "Your trusted software development partner specializing in creating innovative digital solutions.",
     images: [
       {
         url: "/branding/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Softune - Software Development",
+        alt: "Infinity - Software Development",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Softune - Turning ideas into digital success stories",
+    title: "Infinity - Turning ideas into digital success stories",
     description: "Your trusted software development partner specializing in creating innovative digital solutions.",
     images: ["/branding/og-image.jpg"],
   },

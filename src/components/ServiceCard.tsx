@@ -25,7 +25,7 @@ const ServiceCard = ({
   return (
     <div className={`bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 transition-all duration-300 hover:translate-y-[-3px] w-full ${className}`}>
       <div className="mb-2 sm:mb-3 md:mb-4">
-        <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#FF913B] flex items-center justify-center text-white">
+        <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#FF0000] flex items-center justify-center text-white">
           <div className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6">
             {icon}
           </div>

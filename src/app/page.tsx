@@ -19,7 +19,7 @@ export default function Home() {
         backgroundPosition: 'center',
       }}
     >
-      <div className="absolute inset-0 bg-[#FFF8E7]/80"></div>
+      <div className="absolute inset-0 bg-[#FFF8E7]/50"></div>
       <div className="relative">
         <Hero />
         <Services />

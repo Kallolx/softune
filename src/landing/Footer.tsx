@@ -26,18 +26,13 @@ const Footer = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="w-10 h-10 sm:w-10 sm:h-10 flex items-center justify-center">
-              <img
-                src="/branding/logo.svg"
-                alt="logo"
-                className="w-[20px] h-[20px] sm:w-[30px] sm:h-[30px] object-contain"
+          <div className="h-8 w-auto">
+              <img 
+                src="/branding/image.png" 
+                alt="logo" 
+                className="h-full w-auto object-contain"
               />
             </div>
-            <span
-              className={`${comfortaa.className} ml-1 text-xl sm:text-2xl font-bold`}
-            >
-              Softune
-            </span>
           </Link>
 
           {/* Desktop navigation - centered */}
